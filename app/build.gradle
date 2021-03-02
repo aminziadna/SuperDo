@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
 
 android {
@@ -42,4 +43,8 @@ dependencies {
     implementation "org.koin:koin-android:2.1.6"
     implementation "org.koin:koin-android-viewmodel:2.1.6"
     implementation 'com.google.code.gson:gson:2.8.6'
+
+    implementation 'androidx.room:room-runtime:2.2.6'
+    implementation 'androidx.room:room-ktx:2.2.6'
+    kapt 'androidx.room:room-compiler:2.2.6'
 }
