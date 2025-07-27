@@ -1,16 +1,17 @@
 plugins {
     kotlin("multiplatform")
     kotlin("plugin.serialization")
+    kotlin("plugin.compose")
     id("com.android.library")
     id("org.jetbrains.compose")
 }
 
 kotlin {
+    jvmToolchain(11)
+    
     androidTarget {
-        compilations.all {
-            kotlinOptions {
-                jvmTarget = "1.8"
-            }
+        compilerOptions {
+            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_1_8)
         }
     }
     
@@ -19,9 +20,7 @@ kotlin {
     iosArm64()
     iosSimulatorArm64()
     
-    jvm("desktop") {
-        jvmToolchain(11)
-    }
+    jvm("desktop")
     
     js(IR) {
         browser {
