@@ -23,6 +23,12 @@
 - Bottom navigation for easy access
 - Admin-focused UI design
 
+✅ **iOS App** (`iosApp/`)
+- Native iOS app using Compose Multiplatform
+- Same features as Android user app
+- iOS-optimized UI and navigation
+- Shared business logic with other platforms
+
 ✅ **Web App** (`webApp/`)
 - Compose for Web implementation
 - Responsive dashboard design
@@ -53,7 +59,13 @@
    ./gradlew :androidManagementApp:assembleDebug
    ```
 
-4. **Web App**
+4. **iOS App**
+   ```bash
+   ./gradlew :iosApp:iosSimulatorArm64Test
+   ```
+   *Requires macOS and Xcode*
+
+5. **Web App**
    ```bash
    ./gradlew :webApp:jsBrowserDevelopmentRun
    ```
@@ -61,7 +73,8 @@
 ### Running the Apps
 
 1. **Android Apps**: Install APK files or run directly from Android Studio
-2. **Web App**: Opens automatically in browser at `http://localhost:8080`
+2. **iOS App**: Run in Xcode or iOS Simulator (requires macOS)
+3. **Web App**: Opens automatically in browser at `http://localhost:8080`
 
 ## 🎯 Key Features Implemented
 

@@ -14,6 +14,11 @@ kotlin {
         }
     }
     
+    // iOS targets
+    iosX64()
+    iosArm64()
+    iosSimulatorArm64()
+    
     jvm("desktop") {
         jvmToolchain(11)
     }
@@ -70,6 +75,19 @@ kotlin {
             dependencies {
                 implementation("io.ktor:ktor-client-android:${rootProject.ext["ktor_version"]}")
                 implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:${rootProject.ext["lifecycle_version"]}")
+            }
+        }
+        
+        val iosX64Main by getting
+        val iosArm64Main by getting
+        val iosSimulatorArm64Main by getting
+        val iosMain by creating {
+            dependsOn(commonMain)
+            iosX64Main.dependsOn(this)
+            iosArm64Main.dependsOn(this)
+            iosSimulatorArm64Main.dependsOn(this)
+            dependencies {
+                implementation("io.ktor:ktor-client-darwin:${rootProject.ext["ktor_version"]}")
             }
         }
         

@@ -17,16 +17,18 @@ GymKMP/
 │       └── repository/    # Repository implementations
 ├── androidUserApp/        # Android app for gym members
 ├── androidManagementApp/  # Android app for gym management
+├── iosApp/               # iOS app for gym members
 └── webApp/               # Web dashboard for management
 ```
 
 ## 🚀 Features
 
-### 👥 User App (Members)
+### 👥 User App (Members) - Android & iOS
 - **Dashboard**: Personal workout stats, upcoming classes, quick actions
 - **Class Booking**: Browse and book fitness classes with real-time availability
 - **Profile Management**: Personal information, membership details, emergency contacts
 - **Modern UI**: Material 3 design with intuitive navigation
+- **Cross-Platform**: Native apps for both Android and iOS using Compose Multiplatform
 
 ### 🏢 Management App (Staff/Admin)
 - **Dashboard**: Key metrics, alerts, recent activity overview
@@ -120,7 +122,13 @@ GymKMP/
    ./gradlew :androidManagementApp:installDebug
    ```
 
-5. **Run the Web App**
+5. **Run the iOS App**
+   ```bash
+   ./gradlew :iosApp:iosSimulatorArm64Test
+   ```
+   *Note: iOS app requires Xcode and macOS for compilation*
+
+6. **Run the Web App**
    ```bash
    ./gradlew :webApp:jsBrowserDevelopmentRun
    ```

@@ -1,0 +1,3 @@
+KOTLIN_PROJECT_PATH = :iosApp
+PRODUCT_NAME = GymKMP
+BUNDLE_ID = com.gymkmp.ios
