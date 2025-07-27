@@ -1,2 +1,5 @@
-rootProject.name='Super Do'
-include ':app'
+rootProject.name='GymKMP'
+include ':shared'
+include ':androidUserApp'
+include ':androidManagementApp'
+include ':webApp'
